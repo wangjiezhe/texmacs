@@ -12,10 +12,16 @@
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+(define (sage-launcher)
+  (with path "$TEXMACS_BIN_PATH/bin/tm_sage"
+    (string-append
+      "sage -python "
+      (url-concretize (unix->url path)))))
+
 (plugin-configure sage
   (:macpath "Sage*" "Contents/Resources/sage")
   (:require (url-exists-in-path? "sage"))
-  (:launch "sage -python `which tm_sage`")
+  (:launch ,(sage-launcher))
   (:tab-completion #t)
   (:session "Sage")
   (:scripts "Sage"))
