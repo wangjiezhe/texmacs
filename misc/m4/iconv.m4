@@ -9,7 +9,7 @@ AS_HELP_STRING([--with-iconv@<:@=DIR@:>@], [where to find iconv []]),
 
 if [[[ "$withval" != no ]]]
 then
-  [$0]_TEMP=$(mktemp -t texmacs)
+  [$0]_TEMP=$(mktemp -t texmacsXXXXXX)
 
   [$0]_PATH=$(echo ${LDFLAGS//\/lib/\/include})
   AX_SAVE_FLAGS

@@ -10045,7 +10045,7 @@ fi
 
 if [[ "$withval" != no ]]
 then
-  LC_ICONV_TEMP=$(mktemp -t texmacs)
+  LC_ICONV_TEMP=$(mktemp -t texmacsXXXXXX)
 
   LC_ICONV_PATH=$(echo ${LDFLAGS//\/lib/\/include})
 
